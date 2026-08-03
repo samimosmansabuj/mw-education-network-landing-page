@@ -1207,7 +1207,7 @@ img {
 .footer {
   background: var(--cream-dark);
   border-top: 1px solid var(--border);
-  padding: 28px 0;
+  padding: 20px 0;
 }
 
 .footer-container {
