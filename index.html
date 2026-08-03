@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MW Education – Your Degree Abroad, Planned Properly</title>
+  <meta name="description"
+    content="MW Education walks with students from the first counselling session to the day they land on campus – admissions, scholarships, visas and everything between." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <a href="#" class="nav-logo" id="logo-link">
+        <div class="logo-mark">MW</div>
+        <div class="logo-text">
+          <span class="logo-name">MW Education</span>
+          <span class="logo-sub">Atlanta, Georgia</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#destinations" class="nav-link">Destinations</a></li>
+        <li><a href="study-in-usa.html" class="nav-link">Study in USA</a></li>
+        <li><a href="#how-it-works" class="nav-link">Process</a></li>
+        <li><a href="#founder" class="nav-link">Leadership</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-primary btn-nav" id="nav-cta">Free consultation</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+      <li><a href="#destinations" onclick="closeMobileMenu()">Destinations</a></li>
+      <li><a href="study-in-usa.html">Study in USA</a></li>
+      <li><a href="#how-it-works" onclick="closeMobileMenu()">Process</a></li>
+      <li><a href="#founder" onclick="closeMobileMenu()">Leadership</a></li>
+      <li><a href="#contact" class="btn btn-primary" onclick="closeMobileMenu()">Free consultation</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ════════════════════════════════════════════
+         HERO SECTION
+    ════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero-container">
+        <div class="hero-content" data-animate="fade-up">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Student consultancy since 2016
+          </div>
+
+          <h1 class="hero-heading">
+            Your degree abroad,<br />
+            <em>planned properly.</em>
+          </h1>
+
+          <p class="hero-description">
+            MW Education Network walks with students from the first counselling session to the day they land on campus —
+            admissions, scholarships, visas and everything between.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary btn-lg" id="hero-cta">
+              Book a Free Assessment
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#services" class="btn btn-ghost btn-lg" id="hero-secondary">What we do</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item" data-animate="fade-up" data-delay="100">
+              <span class="stat-number" data-target="2400">0</span>
+              <span class="stat-suffix">+</span>
+              <span class="stat-label">Students placed</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-animate="fade-up" data-delay="200">
+              <span class="stat-number" data-target="18">0</span>
+              <span class="stat-label">Countries</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-animate="fade-up" data-delay="300">
+              <span class="stat-number" data-target="98">0</span>
+              <span class="stat-suffix">%</span>
+              <span class="stat-label">Visa success</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap" data-animate="fade-left">
+          <div class="hero-img-card">
+            <img src="image/hero_students.png" alt="Students walking on campus" class="hero-img" id="hero-img" />
+            <div class="hero-img-badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <div>
+                <span class="badge-title">Offer letters in 2-6 weeks</span>
+                <span class="badge-sub">Average across partner universities</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative blobs -->
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         SERVICES SECTION
+    ════════════════════════════════════════════ -->
+    <section class="services" id="services">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up">
+          <h2 class="section-title">Everything a student file needs</h2>
+          <p class="section-subtitle">
+            One counsellor stays with you across every stage, so nothing gets lost or ever seems difficult.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card" data-animate="fade-up" data-delay="0" id="service-university">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <h3 class="service-title">University Selection</h3>
+            <p class="service-desc">
+              Course and campus shortlists matched to your grades, budget and career plan.
+            </p>
+          </div>
+
+          <div class="service-card" data-animate="fade-up" data-delay="80" id="service-application">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+            <h3 class="service-title">Application & SOP</h3>
+            <p class="service-desc">
+              Document review, statement of purpose editing and end-to-end application filing.
+            </p>
+          </div>
+
+          <div class="service-card" data-animate="fade-up" data-delay="160" id="service-scholarships">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+            </div>
+            <h3 class="service-title">Scholarships & Funding</h3>
+            <p class="service-desc">
+              Merit and need-based funding searches, plus bank statement and sponsor guidance.
+            </p>
+          </div>
+
+          <div class="service-card" data-animate="fade-up" data-delay="0" id="service-visa">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <line x1="2" y1="10" x2="22" y2="10" />
+              </svg>
+            </div>
+            <h3 class="service-title">Visa & Interview</h3>
+            <p class="service-desc">
+              File preparation, mock interviews and embassy appointment handling.
+            </p>
+          </div>
+
+          <div class="service-card" data-animate="fade-up" data-delay="80" id="service-ielts">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <h3 class="service-title">IELTS & Test Prep</h3>
+            <p class="service-desc">
+              Coaching partners for IELTS, TOEFL, PTE, GRE and Duolingo English Test.
+            </p>
+          </div>
+
+          <div class="service-card" data-animate="fade-up" data-delay="160" id="service-predeparture">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.5 19.79 19.79 0 0 1 1.61 3.87 2 2 0 0 1 3.6 1.72h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.27a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <h3 class="service-title">Pre-departure Care</h3>
+            <p class="service-desc">
+              Accommodation, airport pickup, health cover and first-week settling support.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         DESTINATIONS SECTION
+    ════════════════════════════════════════════ -->
+    <section class="destinations" id="destinations">
+      <div class="section-container">
+        <div class="destinations-header" data-animate="fade-up">
+          <h2 class="section-title">Where our students go</h2>
+          <a href="#contact" class="link-arrow">
+            Partner institutions across 18 countries
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="destination-tabs" id="destination-tabs">
+          <button class="dest-tab" data-country="uk" id="tab-uk">🇬🇧 UK</button>
+          <button class="dest-tab" data-country="canada" id="tab-canada">🇨🇦 Canada</button>
+          <button class="dest-tab" data-country="australia" id="tab-australia">🇦🇺 Australia</button>
+          <button class="dest-tab active" data-country="usa" id="tab-usa"
+            onclick="window.location.href='study-in-usa.html'">🇺🇸 Study in USA ✦</button>
+          <button class="dest-tab" data-country="germany" id="tab-germany">🇩🇪 Germany</button>
+          <button class="dest-tab" data-country="malaysia" id="tab-malaysia">🇲🇾 Malaysia</button>
+          <button class="dest-tab" data-country="ireland" id="tab-ireland">🇮🇪 Ireland</button>
+          <button class="dest-tab" data-country="japan" id="tab-japan">🇯🇵 Japan</button>
+        </div>
+
+        <div class="destination-content" id="destination-content">
+          <div class="dest-info" data-animate="fade-up">
+            <div class="dest-info-grid">
+              <div class="dest-stat-card" id="dest-stat-1">
+                <span class="dest-stat-num" id="dest-num-students">620+</span>
+                <span class="dest-stat-label">Students placed</span>
+              </div>
+              <div class="dest-stat-card" id="dest-stat-2">
+                <span class="dest-stat-num" id="dest-num-uni">85+</span>
+                <span class="dest-stat-label">Partner universities</span>
+              </div>
+              <div class="dest-stat-card" id="dest-stat-3">
+                <span class="dest-stat-num" id="dest-num-visa">97%</span>
+                <span class="dest-stat-label">Visa success rate</span>
+              </div>
+            </div>
+            <div class="dest-universities" id="dest-universities">
+              <p class="dest-unis-label">Top partner universities:</p>
+              <div class="uni-tags" id="uni-tags">
+                <span class="uni-tag">Georgia Tech</span>
+                <span class="uni-tag">Emory University</span>
+                <span class="uni-tag">University of Georgia</span>
+                <span class="uni-tag">NYU</span>
+                <span class="uni-tag">UCLA</span>
+                <span class="uni-tag">USC</span>
+                <span class="uni-tag">University of Miami</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         HOW IT WORKS
+    ════════════════════════════════════════════ -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="section-container">
+        <h2 class="section-title light" data-animate="fade-up">How it works</h2>
+
+        <div class="steps-grid">
+          <div class="step-card" data-animate="fade-up" data-delay="0" id="step-1">
+            <div class="step-number">01</div>
+            <h3 class="step-title">Free profile assessment</h3>
+            <p class="step-desc">We review academics, budget and goals in a 30-minute session.</p>
+            <div class="step-connector"></div>
+          </div>
+
+          <div class="step-card" data-animate="fade-up" data-delay="100" id="step-2">
+            <div class="step-number">02</div>
+            <h3 class="step-title">Shortlist & apply</h3>
+            <p class="step-desc">Pick universities together, then we prepare and submit every file.</p>
+            <div class="step-connector"></div>
+          </div>
+
+          <div class="step-card" data-animate="fade-up" data-delay="200" id="step-3">
+            <div class="step-number">03</div>
+            <h3 class="step-title">Offer & funding</h3>
+            <p class="step-desc">Secure your offer letter, scholarships and financial documents.</p>
+            <div class="step-connector"></div>
+          </div>
+
+          <div class="step-card" data-animate="fade-up" data-delay="300" id="step-4">
+            <div class="step-number">04</div>
+            <h3 class="step-title">Visa & fly</h3>
+            <p class="step-desc">Visa filing, interview prep and pre-departure briefing before takeoff.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         FOUNDER / TESTIMONIAL SECTION
+    ════════════════════════════════════════════ -->
+    <section class="founder" id="founder">
+      <div class="section-container">
+        <div class="founder-inner">
+          <div class="founder-image-wrap" data-animate="fade-right">
+            <img src="image/founder_photo.jpg" alt="Mahinur Sazib Sristy – Founder & CEO" class="founder-img"
+              id="founder-img" />
+            <div class="founder-img-decor"></div>
+          </div>
+
+          <div class="founder-content" data-animate="fade-left">
+            <span class="founder-eyebrow">Founder</span>
+            <h2 class="founder-name">Mahinur Sazib Sristy</h2>
+            <p class="founder-title">Founder & CEO, MW Education</p>
+
+            <blockquote class="founder-quote">
+              "Studying abroad is the biggest investment most families ever make. Our job is to make that decision
+              honest and informed — the right university, a realistic budget and a visa file that stands up to scrutiny.
+              Every student who walks through our door is counselled personally, never processed."
+            </blockquote>
+
+            <p class="founder-bio">
+              Under her leadership MW Education Network has grown into a full-service consultancy with certified
+              counsellors, direct university partnerships and a dedicated visa desk.
+            </p>
+
+            <a href="#contact" class="btn btn-primary" id="founder-cta">Book a session →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         CONTACT / FORM SECTION
+    ════════════════════════════════════════════ -->
+    <section class="contact" id="contact">
+      <div class="section-container">
+        <div class="contact-inner">
+
+          <div class="contact-info" data-animate="fade-right">
+            <h2 class="section-title">Talk to a counsellor</h2>
+            <p class="contact-sub">
+              Send your details and we'll arrange a free 30-minute profile assessment — online or at our office.
+            </p>
+
+            <ul class="contact-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.5 19.79 19.79 0 0 1 1.61 3.87 2 2 0 0 1 3.6 1.72h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.27a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <a href="tel:+17865554958" id="contact-phone">(516) 814-6895</a>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <a href="mailto:info@mweducationnetwork.com" id="contact-email">info@mweducationnetwork.com</a>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span id="contact-address">Matuail, Jatrabari, Dhaka, Bangladesh</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-form-wrap" data-animate="fade-left">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="fullName" placeholder="Your name" required />
+                <span class="form-error" id="error-name"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com" required />
+                <span class="form-error" id="error-email"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="destination">Preferred destination</label>
+                <div class="select-wrap">
+                  <select id="destination" name="destination" required>
+                    <option value="" disabled selected>UK/United Kingdom</option>
+                    <option value="uk">🇬🇧 United Kingdom</option>
+                    <option value="canada">🇨🇦 Canada</option>
+                    <option value="australia">🇦🇺 Australia</option>
+                    <option value="usa">🇺🇸 USA</option>
+                    <option value="germany">🇩🇪 Germany</option>
+                    <option value="malaysia">🇲🇾 Malaysia</option>
+                    <option value="ireland">🇮🇪 Ireland</option>
+                    <option value="japan">🇯🇵 Japan</option>
+                  </select>
+                  <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </div>
+                <span class="form-error" id="error-destination"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4"
+                  placeholder="Tell us about your academic background and goals"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full" id="form-submit">
+                <span id="submit-text">Request free assessment</span>
+                <svg id="submit-spinner" class="spinner hidden" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" opacity="0.3" />
+                  <path d="M12 3a9 9 0 0 1 9 9" />
+                </svg>
+              </button>
+
+              <div class="form-success hidden" id="form-success">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Thanks! We'll reach out within 24 hours.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="#" class="nav-logo">
+          <div class="logo-mark small">MW</div>
+          <div class="logo-text">
+            <span class="logo-name">MW Education Network</span>
+          </div>
+        </a>
+        <p class="footer-copy">© 2026 MW Education Network. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <span class="footer-credit">CRO - Mahinur Sazib Sristy</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

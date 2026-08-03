@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study in the USA – MW Education</title>
+  <meta name="description" content="The world's largest higher-education system. Flexible curricula, research funding, paid assistantships and up to three years of post-study work for STEM graduates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ══════════════════════════════
+       RESET & TOKENS
+    ══════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1a2744;
+      --navy-deep:  #111b38;
+      --cream:      #f7f4ee;
+      --cream-alt:  #f0ece3;
+      --white:      #ffffff;
+      --border:     #e5e0d5;
+      --border-soft:#ede8df;
+      --text-dark:  #1a1a2e;
+      --text-mid:   #4a4e6a;
+      --text-light: #8b8fa8;
+      --gold:       #c8a96e;
+      --gold-bg:    rgba(200,169,110,0.12);
+      --step-bg:    #1e3159;
+      --font-sans:  'Inter', system-ui, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --radius:     10px;
+      --shadow:     0 8px 32px rgba(26,39,68,0.10);
+      --shadow-lg:  0 20px 56px rgba(26,39,68,0.16);
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream);
+      color: var(--text-mid);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-serif);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* ══════════════════════════════
+       BUTTONS
+    ══════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 11px 20px;
+      border-radius: 7px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .btn svg { transition: transform 0.2s ease; }
+    .btn:hover svg { transform: translateX(3px); }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--navy-deep); }
+
+    /* ══════════════════════════════
+       TOP NAV
+    ══════════════════════════════ */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 244, 238, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.25s ease;
+    }
+
+    .top-nav.scrolled { box-shadow: 0 4px 20px rgba(26,39,68,0.09); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      height: 62px;
+      gap: 20px;
+    }
+
+    /* Logo */
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-box {
+      width: 34px;
+      height: 34px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .logo-text { line-height: 1.15; }
+
+    .logo-name {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .logo-sub {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* Back link */
+    .back-link {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-mid);
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--navy); }
+
+    .back-link svg { transition: transform 0.2s; }
+    .back-link:hover svg { transform: translateX(-3px); }
+
+    /* ══════════════════════════════
+       PAGE HERO (stats bar)
+    ══════════════════════════════ */
+    .page-hero {
+      background: var(--cream);
+      padding: 56px 0 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-bg);
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 100px;
+      padding: 4px 13px;
+      margin-bottom: 18px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      line-height: 1.12;
+      margin-bottom: 16px;
+    }
+
+    .page-hero > .container > p {
+      font-size: 14.5px;
+      line-height: 1.8;
+      max-width: 640px;
+      margin-bottom: 44px;
+      color: var(--text-mid);
+    }
+
+    /* Stats strip */
+    .stats-strip {
+      background: var(--navy);
+      margin-top: 0;
+    }
+
+    .stats-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-block {
+      padding: 26px 28px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-block strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .stat-block span {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+    }
+
+    /* ══════════════════════════════
+       UNIVERSITIES SECTION
+    ══════════════════════════════ */
+    .unis-section {
+      padding: 80px 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .section-head { margin-bottom: 10px; }
+
+    .section-head h2 { font-size: 1.95rem; }
+
+    .section-lead {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+
+    .unis-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border-soft);
+      border-left: 1px solid var(--border-soft);
+    }
+
+    .uni-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border-soft);
+      border-right: 1px solid var(--border-soft);
+      transition: background 0.2s;
+    }
+
+    .uni-row:hover { background: var(--cream); }
+
+    .uni-num {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+      min-width: 22px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .uni-info {}
+
+    .uni-name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--navy);
+      display: block;
+      line-height: 1.3;
+    }
+
+    .uni-loc {
+      font-size: 11.5px;
+      color: var(--text-light);
+      margin-top: 3px;
+      display: block;
+    }
+
+    /* ══════════════════════════════
+       ADMISSION PROCESS
+    ══════════════════════════════ */
+    .process-section {
+      padding: 80px 0;
+      background: var(--cream-alt);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .process-section h2 { font-size: 1.95rem; margin-bottom: 10px; }
+
+    .process-lead {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .process-step {
+      padding: 28px 30px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .process-step:hover { background: rgba(26,39,68,0.025); }
+
+    .step-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .process-step h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      font-family: var(--font-serif);
+    }
+
+    .process-step p {
+      font-size: 12.5px;
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+
+    /* ══════════════════════════════
+       DOCUMENT CHECKLIST + CTA
+    ══════════════════════════════ */
+    .checklist-section {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .checklist-head h2 { font-size: 1.95rem; margin-bottom: 28px; }
+
+    .checklist-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .checklist-item:first-child { border-top: 1px solid var(--border-soft); }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(34,197,94,0.1);
+      border: 1.5px solid rgba(34,197,94,0.35);
+      display: grid;
+      place-items: center;
+      margin-top: 1px;
+    }
+
+    .check-icon svg { color: #22c55e; }
+
+    .checklist-item span {
+      font-size: 13px;
+      color: var(--text-dark);
+      font-weight: 450;
+      line-height: 1.5;
+    }
+
+    /* CTA Card */
+    .cta-card {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 36px 32px;
+      color: #fff;
+      position: sticky;
+      top: 80px;
+    }
+
+    .cta-card-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .cta-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .cta-card p {
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 28px;
+    }
+
+    .btn-cta-light {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: 7px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.22s;
+      text-decoration: none;
+    }
+
+    .btn-cta-light:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .site-footer {
+      background: var(--cream-alt);
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 11.5px;
+      color: var(--text-light);
+    }
+
+    /* ══════════════════════════════
+       REVEAL ANIMATIONS
+    ══════════════════════════════ */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-reveal].visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    [data-reveal-delay="1"] { transition-delay: 0.08s; }
+    [data-reveal-delay="2"] { transition-delay: 0.16s; }
+    [data-reveal-delay="3"] { transition-delay: 0.24s; }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 900px) {
+      .stats-strip-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .unis-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .process-grid { grid-template-columns: 1fr; }
+
+      .checklist-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .cta-card { position: static; }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero { padding-top: 40px; }
+      .stats-strip-inner { grid-template-columns: 1fr 1fr; }
+      .unis-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       TOP NAV
+  ══════════════════════════════ -->
+  <header class="top-nav" id="topNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo-wrap" id="site-logo">
+        <div class="logo-box">MW</div>
+        <div class="logo-text">
+          <span class="logo-name">MW Education</span>
+          <span class="logo-sub">Atlanta, Georgia</span>
+        </div>
+      </a>
+
+      <a href="index.html" class="back-link" id="back-home">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg>
+        Home
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════
+         PAGE HERO
+    ══════════════════════════════ -->
+    <section class="page-hero" id="hero">
+      <div class="container">
+        <div data-reveal>
+          <span class="hero-eyebrow">Destination Page</span>
+          <h1>Study in the USA</h1>
+          <p>
+            The world's largest higher-education system. Flexible curricula, research funding, paid
+            assistantships and up to three years of post-study work for STEM graduates. Here are the
+            universities we place students into and exactly how the admission works.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats-strip">
+        <div class="container">
+          <div class="stats-strip-inner">
+            <div class="stat-block" data-reveal>
+              <strong>USD 15k–60k</strong>
+              <span>Full cost per year</span>
+            </div>
+            <div class="stat-block" data-reveal data-reveal-delay="1">
+              <strong>USD 10k–18k</strong>
+              <span>Living cost per year</span>
+            </div>
+            <div class="stat-block" data-reveal data-reveal-delay="2">
+              <strong>3 years</strong>
+              <span>OPT for STEM graduates</span>
+            </div>
+            <div class="stat-block" data-reveal data-reveal-delay="3">
+              <strong>20 hrs/week</strong>
+              <span>On-campus work allowed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         UNIVERSITIES
+    ══════════════════════════════ -->
+    <section class="unis-section" id="universities">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>20 universities we work with</h2>
+          <p class="section-lead">
+            A mix of Ivy League, top research schools and strong public universities with generous international funding.
+          </p>
+        </div>
+
+        <div class="unis-grid" data-reveal>
+
+          <div class="uni-row">
+            <span class="uni-num">01</span>
+            <div class="uni-info">
+              <span class="uni-name">Harvard University</span>
+              <span class="uni-loc">Cambridge, MA</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">02</span>
+            <div class="uni-info">
+              <span class="uni-name">Stanford University</span>
+              <span class="uni-loc">Stanford, CA</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">03</span>
+            <div class="uni-info">
+              <span class="uni-name">Massachusetts Institute of Technology</span>
+              <span class="uni-loc">Cambridge, MA</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">04</span>
+            <div class="uni-info">
+              <span class="uni-name">California Institute of Technology</span>
+              <span class="uni-loc">Pasadena, CA</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">05</span>
+            <div class="uni-info">
+              <span class="uni-name">Princeton University</span>
+              <span class="uni-loc">Princeton, NJ</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">06</span>
+            <div class="uni-info">
+              <span class="uni-name">Yale University</span>
+              <span class="uni-loc">New Haven, CT</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">07</span>
+            <div class="uni-info">
+              <span class="uni-name">Columbia University</span>
+              <span class="uni-loc">New York, NY</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">08</span>
+            <div class="uni-info">
+              <span class="uni-name">University of Chicago</span>
+              <span class="uni-loc">Chicago, IL</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">09</span>
+            <div class="uni-info">
+              <span class="uni-name">University of Pennsylvania</span>
+              <span class="uni-loc">Philadelphia, PA</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">10</span>
+            <div class="uni-info">
+              <span class="uni-name">Cornell University</span>
+              <span class="uni-loc">Ithaca, NY</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">11</span>
+            <div class="uni-info">
+              <span class="uni-name">Johns Hopkins University</span>
+              <span class="uni-loc">Baltimore, MD</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">12</span>
+            <div class="uni-info">
+              <span class="uni-name">Duke University</span>
+              <span class="uni-loc">Durham, NC</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">13</span>
+            <div class="uni-info">
+              <span class="uni-name">Northwestern University</span>
+              <span class="uni-loc">Evanston, IL</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">14</span>
+            <div class="uni-info">
+              <span class="uni-name">University of California, Berkeley</span>
+              <span class="uni-loc">Berkeley, CA</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">15</span>
+            <div class="uni-info">
+              <span class="uni-name">University of California, Los Angeles</span>
+              <span class="uni-loc">Los Angeles, CA</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">16</span>
+            <div class="uni-info">
+              <span class="uni-name">University of Michigan, Ann Arbor</span>
+              <span class="uni-loc">Ann Arbor, MI</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">17</span>
+            <div class="uni-info">
+              <span class="uni-name">Carnegie Mellon University</span>
+              <span class="uni-loc">Pittsburgh, PA</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">18</span>
+            <div class="uni-info">
+              <span class="uni-name">New York University</span>
+              <span class="uni-loc">New York, NY</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">19</span>
+            <div class="uni-info">
+              <span class="uni-name">University of Texas at Austin</span>
+              <span class="uni-loc">Austin, TX</span>
+            </div>
+          </div>
+
+          <div class="uni-row">
+            <span class="uni-num">20</span>
+            <div class="uni-info">
+              <span class="uni-name">Purdue University</span>
+              <span class="uni-loc">West Lafayette, IN</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         ADMISSION PROCESS
+    ══════════════════════════════ -->
+    <section class="process-section" id="process">
+      <div class="container">
+        <div data-reveal>
+          <h2>University admission process</h2>
+          <p class="process-lead">Eight stages from shortlisting to boarding — We handle each one with you.</p>
+        </div>
+
+        <div class="process-grid" data-reveal>
+
+          <div class="process-step" id="proc-step-1">
+            <div class="step-tag">01</div>
+            <h3>Choose intake and shortlist</h3>
+            <p>US universities have January, Spring and Summer intakes. Choose your intake and shortlist universities across discipline, target and back-up categories.</p>
+          </div>
+
+          <div class="process-step" id="proc-step-2">
+            <div class="step-tag">02</div>
+            <h3>Sit the required tests</h3>
+            <p>English proficiency: IELTS 6.5, TOEFL 80–100 or Duolingo 105. Academic: SAT/ACT for bachelor's (many are test-optional), GRE or GMAT for master's and MBA.</p>
+          </div>
+
+          <div class="process-step" id="proc-step-3">
+            <div class="step-tag">03</div>
+            <h3>Prepare your documents</h3>
+            <p>Academic transcripts and certificates, Statement of Purpose, 2–4 recommendation letters, Curriculum vitae/CV, portfolio or research papers where relevant.</p>
+          </div>
+
+          <div class="process-step" id="proc-step-4">
+            <div class="step-tag">04</div>
+            <h3>Apply online</h3>
+            <p>Run the applications through the Common App or the university portal. Most applications go directly to each university. Application fees run about USD 50–75 each.</p>
+          </div>
+
+          <div class="process-step" id="proc-step-5">
+            <div class="step-tag">05</div>
+            <h3>Scholarships and funding</h3>
+            <p>Apply for merit scholarships, assistantships and fee waivers alongside the application, and arrange the bank solvency documents showing tuition plus living costs.</p>
+          </div>
+
+          <div class="process-step" id="proc-step-6">
+            <div class="step-tag">06</div>
+            <h3>Offer letter and I-20</h3>
+            <p>Accept or decline each offer, pay the enrolment deposit, and the university issues the I-20 form needed for the F-1 visa.</p>
+          </div>
+
+          <div class="process-step" id="proc-step-7">
+            <div class="step-tag">07</div>
+            <h3>SEVIS fee and F-1 visa</h3>
+            <p>Pay the USD 350 SEVIS fee, complete the DS-160 form, book the embassy appointment and attend the interview with financial and academic evidence.</p>
+          </div>
+
+          <div class="process-step" id="proc-step-8">
+            <div class="step-tag">08</div>
+            <h3>Pre-departure</h3>
+            <p>Housing, health insurance, air tickets, forex and airport pickup — plus a briefing on campus check-in and class reporting dates.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         DOCUMENT CHECKLIST + CTA
+    ══════════════════════════════ -->
+    <section class="checklist-section" id="checklist">
+      <div class="container">
+        <div class="checklist-grid">
+
+          <div data-reveal>
+            <div class="checklist-head">
+              <h2>Document checklist</h2>
+            </div>
+
+            <div class="checklist-items">
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>Passport (valid 6+ months)</span>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>All academic transcripts and certificates</span>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>IELTS / TOEFL (or Duolingo score report)</span>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>SAT / ACT / GRE / GMAT score (if required)</span>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>Statement of Recommendation</span>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>Updated CV / résumé</span>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>Bank statement and sponsor affidavit</span>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>Experience letters (if any)</span>
+              </div>
+
+              <div class="checklist-item">
+                <div class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span>Form I-20 and SEVIS fee receipt</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CTA Card -->
+          <div data-reveal data-reveal-delay="1">
+            <div class="cta-card" id="cta-card">
+              <span class="cta-card-label">Free Assessment</span>
+              <h3>Not sure where you stand?</h3>
+              <p>
+                Send us your transcript and we'll assess which of these universities are realistic for you on the one and including your budget range.
+              </p>
+              <a href="index.html#contact" class="btn-cta-light" id="cta-book-btn">
+                Book a free assessment
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-inner">
+      <span>© 2026 MW Education Atlanta. All rights reserved.</span>
+      <span>CRO – Mahinur Sazib Sristy</span>
+    </div>
+  </footer>
+
+  <script>
+    'use strict';
+
+    /* ── Sticky nav shadow ── */
+    const topNav = document.getElementById('topNav');
+    window.addEventListener('scroll', () => {
+      topNav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* ── Scroll reveal ── */
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          ro.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+
+    revealEls.forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>
