@@ -509,12 +509,7 @@ img {
   max-width: max-content;
 }
 
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 24px;
-}
+
 
 .stat-item:first-child {
   padding-left: 0;
@@ -543,19 +538,16 @@ img {
 }
 
 .stat-item {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: baseline;
-  flex-direction: row;
-  gap: 0;
-}
-
-.stat-item {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   align-items: end;
   gap: 0 2px;
+
+  flex-wrap: nowrap;
+  flex-direction: row;
+
+  padding: 0 24px;
 }
 
 .stat-number {
@@ -1291,7 +1283,7 @@ img {
 
   .steps-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 15px;
   }
 
   .steps-grid::before {
@@ -1332,8 +1324,17 @@ img {
 
   .hero-stats {
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 0px;
     max-width: 100%;
+    padding: 13px 13px;
+  }
+
+  .stat-item {
+    padding: 0 15px;
+  }
+
+  .step-card {
+    padding: 0px 0px;
   }
 
   .stat-divider {
