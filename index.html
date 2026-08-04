@@ -31,7 +31,8 @@
         <li><a href="#destinations" class="nav-link">Destinations</a></li>
         <li><a href="study-in-usa.html" class="nav-link">Study in USA</a></li>
         <li><a href="#how-it-works" class="nav-link">Process</a></li>
-        <li><a href="#founder" class="nav-link">Leadership</a></li>
+        <li><a href="#certificates" class="nav-link">Awards</a></li>
+        <!-- <li><a href="#founder" class="nav-link">Leadership</a></li> -->
       </ul>
 
       <a href="#contact" class="btn btn-primary btn-nav" id="nav-cta">Free consultation</a>
@@ -49,6 +50,7 @@
       <li><a href="#destinations" onclick="closeMobileMenu()">Destinations</a></li>
       <li><a href="study-in-usa.html">Study in USA</a></li>
       <li><a href="#how-it-works" onclick="closeMobileMenu()">Process</a></li>
+      <li><a href="#certificates" onclick="closeMobileMenu()">Awards</a></li>
       <li><a href="#founder" onclick="closeMobileMenu()">Leadership</a></li>
       <li><a href="#contact" class="btn btn-primary" onclick="closeMobileMenu()">Free consultation</a></li>
     </ul>
@@ -359,6 +361,88 @@
         </div>
       </div>
     </section> -->
+
+    <!-- ════════════════════════════════════════════
+         CERTIFICATES & AWARDS SECTION
+    ════════════════════════════════════════════ -->
+    <section class="certificates" id="certificates" aria-label="Certificates and Awards">
+      <div class="section-container">
+
+        <div class="certificates-header" data-animate="fade-up">
+          <div>
+            <h2 class="section-title">Certificates &amp; Awards</h2>
+            <p class="section-subtitle">
+              Recognised by leading institutions for excellence in international education consulting.
+            </p>
+          </div>
+          <div class="cert-nav-btns" role="group" aria-label="Carousel navigation">
+            <button class="cert-nav-btn" id="cert-prev" aria-label="Previous certificate">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button class="cert-nav-btn" id="cert-next" aria-label="Next certificate">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="cert-carousel-viewport" id="certViewport">
+          <div class="cert-carousel-track" id="certTrack" role="list" aria-live="polite">
+
+            <!-- ─── Certificate 1 ─── -->
+            <article class="cert-card" role="listitem" aria-label="Authorised Partner – Applywave">
+              <div class="cert-img-wrap">
+                <img src="image/certificate/applywave-certificate.jpeg" alt="Applywave Authorised Partner Certificate"
+                  loading="lazy" decoding="async" width="800" height="600" />
+                <span class="cert-year-badge">2025</span>
+              </div>
+              <div class="cert-body">
+                <span class="cert-org">Applywave</span>
+                <!-- <h3 class="cert-title">Authorised Partner</h3> -->
+                <p class="cert-desc">Fulfills the requirements and standards, thus being contracted as an official
+                  authorised partner.</p>
+              </div>
+            </article>
+
+            <!-- ─── Certificate 2 ─── -->
+            <!-- <article class="cert-card" role="listitem" aria-label="Authorised Partner – Applywave">
+              <div class="cert-img-wrap">
+                <img src="image/certificate/applywave-certificate.jpeg" alt="Applywave Authorised Partner Certificate"
+                  loading="lazy" decoding="async" width="800" height="600" />
+                <span class="cert-year-badge">2025</span>
+              </div>
+              <div class="cert-body">
+                <span class="cert-org">Applywave</span>
+                <h3 class="cert-title">Authorised Partner</h3>
+                <p class="cert-desc">Fulfills the requirements and standards, thus being contracted as an official
+                  authorised partner.</p>
+              </div>
+            </article> -->
+
+            <!--
+              ═══════════════════════════════════════════════════════
+              ADD MORE CERTIFICATES HERE
+              Copy one <article class="cert-card"> … </article> block
+              above and update the image, title, org, year and desc.
+              ═══════════════════════════════════════════════════════
+            -->
+
+          </div>
+        </div>
+
+        <!-- Dots: one per card — add/remove a <button> when you add/remove a card -->
+        <div class="cert-dots" id="certDots" role="tablist" aria-label="Certificate pagination">
+          <button class="cert-dot active" role="tab" aria-label="Certificate 1" aria-selected="true"></button>
+          <button class="cert-dot" role="tab" aria-label="Certificate 2" aria-selected="false"></button>
+        </div>
+
+      </div>
+    </section>
 
     <!-- ════════════════════════════════════════════
          CONTACT / FORM SECTION

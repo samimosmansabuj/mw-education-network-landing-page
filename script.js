@@ -315,3 +315,89 @@ window.addEventListener('mousemove', (e) => {
     blob2.style.transform = `translate(${-dx * 14}px, ${-dy * 10}px)`;
   }
 }, { passive: true });
+
+
+// ─────────────────────────────────────────────
+// 9. CERTIFICATES & AWARDS CAROUSEL
+// ─────────────────────────────────────────────
+// Cards live in the HTML. JS only drives the slider.
+
+(function certCarousel() {
+  const track    = document.getElementById('certTrack');
+  const dotsWrap = document.getElementById('certDots');
+  const prevBtn  = document.getElementById('cert-prev');
+  const nextBtn  = document.getElementById('cert-next');
+
+  if (!track) return;
+
+  const cards = Array.from(track.querySelectorAll('.cert-card'));
+  const dots  = Array.from(dotsWrap ? dotsWrap.querySelectorAll('.cert-dot') : []);
+  const total = cards.length;
+
+  if (total === 0) return;
+
+  let current = 0;
+  let autoplayTimer = null;
+
+  /* ── Move to slide n ── */
+  function goTo(n) {
+    // Infinite loop: wrap around
+    current = (n + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+
+    // Update dots
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+      dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
+    });
+  }
+
+  function goNext() { goTo(current + 1); }
+  function goPrev() { goTo(current - 1); }
+
+  /* ── Button clicks ── */
+  if (nextBtn) nextBtn.addEventListener('click', () => { goNext(); resetAutoplay(); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { goPrev(); resetAutoplay(); });
+
+  /* ── Dot clicks ── */
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { goTo(i); resetAutoplay(); });
+  });
+
+  /* ── Keyboard navigation ── */
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { goNext(); resetAutoplay(); }
+    if (e.key === 'ArrowLeft')  { goPrev(); resetAutoplay(); }
+  });
+
+  /* ── Autoplay (pauses on hover / focus) ── */
+  function startAutoplay() { autoplayTimer = setInterval(goNext, 4500); }
+  function stopAutoplay()  { clearInterval(autoplayTimer); }
+  function resetAutoplay() { stopAutoplay(); startAutoplay(); }
+
+  track.addEventListener('mouseenter', stopAutoplay);
+  track.addEventListener('mouseleave', startAutoplay);
+  track.addEventListener('focusin',    stopAutoplay);
+  track.addEventListener('focusout',   startAutoplay);
+
+  /* ── Touch / pointer swipe ── */
+  let startX = 0;
+
+  track.addEventListener('pointerdown', (e) => {
+    startX = e.clientX;
+    track.setPointerCapture(e.pointerId);
+    stopAutoplay();
+  });
+
+  track.addEventListener('pointerup', (e) => {
+    const delta = e.clientX - startX;
+    if (delta < -50)      goNext();
+    else if (delta > 50)  goPrev();
+    resetAutoplay();
+  });
+
+  /* ── Init ── */
+  goTo(0);
+  startAutoplay();
+
+})();
